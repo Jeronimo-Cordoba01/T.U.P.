@@ -42,13 +42,13 @@ for i in range(10):
         print("La edad debe ser al menos 18. Inténtalo de nuevo.")
     
     while True:
-        genero = str(input("Ingrese su genero (Masculino, Femenino, Otro): "))
+        genero = str(input("Ingrese su genero (Masculino, Femenino, Otro): ")).capitalize
         if genero in generos:
             break
         print("El genero debe ser (Masculino, Femenino, Otro). Inténtalo de nuevo.")
     
     while True:
-        tecnologia = str(input("Ingrese su tecnologia (IA, RV/RA, IOT): "))
+        tecnologia = str(input("Ingrese su tecnologia (IA, RV/RA, IOT): ")).upper()
         if tecnologia in tecnologías:
             break
         print("La tecnologia debe ser (IA, RV/RA, IOT). Inténtalo de nuevo.")
@@ -67,10 +67,11 @@ for encuesta in encuestas:
         contador_NO_IA += 1
     if genero == "Masculino" and edad > mayor_masculino:
         mayor_masculino = edad
-    nombre_tecnologia_mayor_masculino = (nombre, tecnologia)
+        nombre_mayor_masculino = nombre
+        tecnologia_masculino = tecnologia
 
 porcentaje = (contador_NO_IA / 10) * 100
 
 print("Cantidad de empleados de género masculino que votaron por IOT o IA, con edad entre 25 y 50 años inclusive:", contador_masculino)
 print("Porcentaje de empleados que no votaron por IA, siempre que su género no sea Femenino o su edad esté entre 33 y 40:", porcentaje,"%")
-print("Nombre y tecnología que votó, de los empleados de género masculino con mayor edad de ese género:", nombre_tecnologia_mayor_masculino[0], "-", nombre_tecnologia_mayor_masculino[1])
+print("Nombre y tecnología que votó, de los empleados de género masculino con mayor edad de ese género:", nombre_mayor_masculino[0], "-", tecnologia_masculino[1])
