@@ -34,6 +34,8 @@ tecnologías = ["IA", "RV/RA", "IOT"]; generos = ["Masculino", "Femenino", "Otro
 
 for i in range(10):
     nombre = input("Ingrese su nombre: ").capitalize()
+    while not nombre.isalpha():
+        nombre = input("Nombre ingresado incorrecto: ")
     
     while True:
         edad = int(input("Ingrese si edad: "))
